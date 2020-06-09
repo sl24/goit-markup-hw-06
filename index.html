@@ -470,7 +470,7 @@
             </address>
           </div>
           <div class="footer-item">
-            <p class="title-white join"><b>присоединяйтесь</b></p>
+            <p class="title-white join">присоединяйтесь</p>
             <ul class="footer-social list">
               <li class="social-item">
                 <a
@@ -515,13 +515,19 @@
             </ul>
           </div>
           <div class="footer-item">
-            <p class="title-white join"><b>подпишитесь на рассылку</b></p>
-            <a class="footer-button link" href=""
-              >Подписаться
-              <svg class="button-icon delivery" width="20" height="20">
-                <use href="./images/sprite.svg#icon-delivery"></use>
-              </svg>
-            </a>
+            <p class="title-white join">подпишитесь на рассылку</p>
+            <div class="subscribe">
+              <div class="subscribe-form">
+                <label for="email"></label>
+                <input type="email" name="email" id="email" placeholder="Email" />
+              </div>
+              <a class="footer-button link" href="">Подписаться
+                <svg class="button-icon delivery" width="20" height="20">
+                  <use href="./images/sprite.svg#icon-delivery"></use>
+                </svg>
+              </a>
+            </div>
+            
           </div>
         </div>
         <p class="developed container">
@@ -534,7 +540,40 @@
     <!-- Модальное окно Героя -->
     <div class="backdrop is-hidden" data-modal>
       <div class="modal">
-        <button data-modal-close></button>
+        <button class="button-close" data-modal-close>x</button>
+        <h2 class="modal-title">Оставьте свои данные, мы Вам перезвоним</h2>
+        <form action="">
+
+          <div class="form-cont">
+           <label for="name">Имя</label>
+           <input type="text" name="name" id="name" />
+          </div>
+
+          <div class="form-cont">
+            <label for="tel">Телефон</label>
+            <input type="tel" name="tel" id="tel" />
+          </div>
+
+          <div class="form-cont">
+            <label for="email">Почта</label>
+            <input type="email" name="email" id="email" />
+          </div>
+
+          <div class="form-cont">
+            <label for="comment">Комментарий</label>
+            <textarea name="comment" id="comment" rows="4"></textarea>
+          </div>
+
+          <div class="policy">
+            <input type="checkbox" name="email" id="comment" />
+            <label for="comment">Соглашаюсь с рассылкой и принимаю <a href="">Условия договора</a></label>
+          </div>
+
+          <div class="form-button">
+            <button class="button-submit" type="submit">Отправить</button>
+          </div>
+
+        </form>
       </div>
     </div>
     <script src="./js/modal.js"></script>

@@ -93,8 +93,9 @@
   height: 100%;
   background-color: rgba(0, 0, 0, 0.2);
 
+  visibility: visible;
   opacity: 1;
-  transition: opacity 2500ms var(--cubic);
+  transition: opacity 250ms var(--cubic), visibility 250ms var(--cubic);
 }
 
 .backdrop.is-hidden {
@@ -103,15 +104,106 @@
   pointer-events: none;
 }
 
+.backdrop.is-hidden .modal {
+  transform: translate(-50%, -50%) scale(0.5) rotateX(45deg) rotateY(90deg)
+    rotateZ(90deg);
+}
+
 .modal {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  padding: 40px;
 
-  min-width: 528px;
-  min-height: 581px;
+  width: 528px;
+  height: 581px;
   background-color: #fff;
+
+  box-shadow: 0px 2px 1px rgba(0, 0, 0, 0.2), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 1px 3px rgba(0, 0, 0, 0.12);
+  border-radius: 4px;
+
+  transform: translate(-50%, -50%) scale(1);
+  transition: transform 250ms var(--cubic);
+}
+
+/* Форма модального окна */
+
+.button-close {
+  /* удалить полностью этот селектор, пока просто пытаюсь сделать кнопку */
+  padding: 0;
+  margin: 0;
+  border: none;
+  border-radius: 50%;
+  background-color: #fff;
+  position: absolute;
+  top: -11px;
+  right: -11px;
+  width: 30px;
+  height: 30px;
+  box-shadow: 0px 2px 1px rgba(0, 0, 0, 0.2), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 1px 3px rgba(0, 0, 0, 0.12);
+}
+
+.modal-title {
+  color: var(--title-text-color);
+  font-size: 20px;
+
+  margin: 0;
+  margin-bottom: 30px;
+  text-align: center;
+  line-height: 1.15;
+}
+
+.form-cont input,
+.form-cont textarea {
+  padding: 12px 44px 12px 16px;
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+}
+
+.form-cont input {
+  margin-bottom: 28px;
+}
+
+.form-cont textarea {
+  margin-bottom: 20px;
+  resize: none;
+}
+
+.modal .form-cont {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.15;
+  letter-spacing: 0.01em;
+  color: var(--title-text-color);
+}
+
+.modal .button-submit {
+  min-width: 200px;
+  min-height: 50px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+
+  border: hidden;
+  border-radius: 4px;
+  box-shadow: 0px 2px 1px rgba(0, 0, 0, 0.2), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 1px 3px rgba(0, 0, 0, 0.12);
+
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.87;
+  letter-spacing: 0.06em;
+  color: var(--title-text-white);
+  background-color: var(--accent-color);
+}
+
+.policy {
+  margin-bottom: 30px;
 }
 
 /* Преимущества + Чем мы занимаемся */
@@ -321,11 +413,13 @@
   margin-right: 30px;
 }
 
-.clients-list .item:hover {
+.clients-list .item:hover,
+.clients-list .item:focus {
   border-color: var(--accent-color);
   cursor: pointer;
 }
 
-.clients-list .item:hover .button-icon {
+.clients-list .item:hover .button-icon,
+.clients-list .item:focus .button-icon {
   fill: var(--accent-color);
 }

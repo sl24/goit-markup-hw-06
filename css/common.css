@@ -183,7 +183,8 @@ img {
   color: var(--accent-color);
 }
 
-.contacts-nav .link:hover .button-icon {
+.contacts-nav .link:hover .button-icon,
+.contacts-nav .link:focus .button-icon {
   fill: var(--accent-color);
 }
 
@@ -254,7 +255,7 @@ footer {
 .footer .logo {
   display: inline-block;
   margin-top: 0;
-  margin-bottom: 10px;
+  margin-bottom: 8px;
 }
 
 .footer-nav {
@@ -284,14 +285,41 @@ footer {
   font-style: normal;
 }
 
-.footer p.title-white.join {
+.footer-item p.title-white.join {
   margin-top: 0;
-  margin-bottom: 21px;
+  margin-bottom: 20px;
 
   font-weight: 700;
   line-height: 1.14;
   text-transform: uppercase;
 }
+
+/* Полписка в футере */
+.footer .subscribe {
+  display: flex;
+  flex-direction: row;
+}
+
+.subscribe-form {
+  margin: 0 12px 0 0;
+}
+
+.subscribe-form input[type="email"] {
+  min-width: 358px;
+  height: 50px;
+  padding: 18px 12px;
+  background-color: inherit;
+
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+  font-size: 16px;
+  line-height: 1.87;
+  letter-spacing: 0.03;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+/* конец подписки )) */
 
 .copyright {
   color: var(--copyright-color);
@@ -310,9 +338,9 @@ footer {
 .footer-button {
   display: inline-flex;
   border-radius: 4px;
-  padding: 10px 29px;
+  padding: 5px 29px;
   align-items: center;
-  font-weight: 900;
+  font-weight: 700;
   font-size: 16px;
   line-height: 1.87;
   letter-spacing: 0.06em;
@@ -355,7 +383,8 @@ footer {
   transition: background-color 250ms var(--cubic);
 }
 
-.footer-social .icon-social:hover {
+.footer-social .icon-social:hover,
+.footer-social .icon-social:focus {
   background-color: var(--accent-color);
 }
 
@@ -372,7 +401,8 @@ footer {
   transition: fill 250ms var(--cubic);
 }
 
-.our-team-social .icon-social:hover .button-icon {
+.our-team-social .icon-social:hover .button-icon,
+.our-team-social .icon-social:focus .button-icon {
   fill: var(--title-text-white);
 }
 
@@ -381,7 +411,8 @@ footer {
   transition: background-color 250ms var(--cubic);
 }
 
-.our-team-social .icon-social:hover {
+.our-team-social .icon-social:hover,
+.our-team-social .icon-social:focus {
   background-color: var(--accent-color);
 }
 
