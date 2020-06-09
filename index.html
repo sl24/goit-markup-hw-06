@@ -62,7 +62,7 @@
         <h1 class="hero-title">
           эффективные решения для вашего бизнеса
         </h1>
-        <a href="#" class="hero-button">Заказать услугу</a>
+        <buton class="hero-button" data-modal-open>Заказать услугу</button>
       </section>
 
       <!-- Преимущества -->
@@ -531,5 +531,12 @@
         </p>
       </div>
     </footer>
+    <!-- Модальное окно Героя -->
+    <div class="backdrop is-hidden" data-modal>
+      <div class="modal">
+        <button data-modal-close></button>
+      </div>
+    </div>
+    <script src="./js/modal.js"></script>
   </body>
 </html>
